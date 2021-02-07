@@ -7,9 +7,10 @@
 <table th:each="part: ${availableParts}">
     <tr>
         <td>Part:</td>
-        <td th:text = "${part}"></td>
-        <td>Price: 1000</td>
-        <td><a th:href="@{'/buyer/completeBuy/' + ${part}}">Buyme</a></td>
+        <td th:text = "${part.getPartName()}"></td>
+        <td>Price:</td>
+        <td th:text = "${part.getPrice()}"></td>
+        <td><a th:href="@{'/buyer/completeBuy/' + ${part.getPartName()}}">Buy part</a></td>
     </tr>
 </table>
 

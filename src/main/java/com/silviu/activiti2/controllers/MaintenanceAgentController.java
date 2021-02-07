@@ -43,6 +43,6 @@ public class MaintenanceAgentController {
     @GetMapping("/maintenance/completeTask/{taskId}")
     public String completeTask(@PathVariable("taskId") String taskId) {
         activitiService.completeTask(taskId);
-        return "maintenacePage";
+        return "processCompleted";
     }
 }
