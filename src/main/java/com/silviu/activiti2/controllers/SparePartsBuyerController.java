@@ -1,4 +1,4 @@
-package com.silviu.activiti2.partsBuyer;
+package com.silviu.activiti2.controllers;
 
 import com.silviu.activiti2.services.ActivitiService;
 import com.silviu.activiti2.services.PartsStoreService;
@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,12 +27,15 @@ public class SparePartsBuyerController {
 
     @GetMapping("/buyer/taskList")
     public ModelAndView buyPartsTasks() {
-
         List<Task> taskList = activitiService.getTasks("PartsBuyer");
 
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("taskList");
         modelAndView.addObject("taskList", taskList);
+
+        Integer[] array = {1, 3, 4, 2};
+
+        Arrays.sort(array);
 
         return modelAndView;
     }

@@ -7,20 +7,17 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.4.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 
 	<groupId>com.silviu</groupId>
 	<artifactId>activiti2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>activiti2</name>
-	<description>Activiti spring boot integration test</description>
+	<description>Keolis activiti test</description>
 
 	<properties>
 		<java.version>8</java.version>
-		<activiti.version>6.0.0</activiti.version>
-		<activiti.api.version>5.17.0</activiti.api.version>
-		<!--<activiti-exp.version>5.23.0</activiti-exp.version>-->
 	</properties>
 
 	<dependencies>
@@ -41,12 +38,6 @@
 			<version>7.1.0.M6</version>
 		</dependency>
 
-		<!--<dependency>-->
-			<!--<groupId>org.activiti</groupId>-->
-			<!--<artifactId>activiti-explorer</artifactId>-->
-			<!--<version>${activiti-exp.version}</version>-->
-		<!--</dependency>-->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -59,18 +50,6 @@
 			<version>1.4.200</version>
 			<scope>runtime</scope>
 		</dependency>
-
-		<!--<dependency>-->
-			<!--<groupId>org.activiti</groupId>-->
-			<!--<artifactId>activiti-engine</artifactId>-->
-			<!--<version>5.23.0</version>-->
-		<!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.activiti</groupId>-->
-            <!--<artifactId>spring-boot-starter-rest-api</artifactId>-->
-            <!--<version>${activiti.api.version}</version>-->
-        <!--</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

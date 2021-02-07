@@ -1,6 +1,6 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Index Page</title>
+    <title>Part Store</title>
 </head>
 <body>
 
@@ -12,22 +12,6 @@
         <td><a th:href="@{'/buyer/completeBuy/' + ${part}}">Buyme</a></td>
     </tr>
 </table>
-
-<!--<form action="@{/completePartBuy}" method="post">-->
-
-    <!--<select th:each="part: ${availableParts}">-->
-        <!--<option th:utext="${part}"></option>-->
-    <!--</select>-->
-
-    <!--<select th:field="*{dropdownSelectedValue}">-->
-        <!--<option-->
-                <!--th:each="dropdownValue: ${singleSelectAllValues}"-->
-                <!--th:value="${dropdownValue}"-->
-                <!--th:text="${dropdownValue}" ></option>-->
-    <!--</select>-->
-
-    <!--<input type="submit" value="Submit">-->
-<!--</form>-->
 
 </body>
 </html>  
