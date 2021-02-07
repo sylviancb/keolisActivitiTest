@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="spareParts" name="SparePartsProcess" isExecutable="true">
+    <startEvent id="requestNewPart" activiti:initiator="MaintenanceAgent">
+      <extensionElements>
+        <activiti:formProperty id="requestedPartId" name="requestedPart" type="string"></activiti:formProperty>
+      </extensionElements>
+    </startEvent>
+    <userTask id="buyNewPart" name="BuyNewPart" activiti:candidateGroups="PartsBuyer">
+      <documentation>A new part needs to be purchased by the maintenance agent: ${requestedPart}.</documentation>
+      <extensionElements>
+        <activiti:formProperty id="boughtPartId" name="boughtPart" type="string"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <userTask id="acknowledgement" name="AquisitionAcknlowledgement" activiti:candidateGroups="MaintenanceAgent">
+      <documentation>A new part was bought: ${boughtPart}, and will be delivered shortly.</documentation>
+    </userTask>
+    <sequenceFlow id="sid-E246E149-BB2A-4CFD-97CB-10DEEE3777B1" sourceRef="requestNewPart" targetRef="buyNewPart"></sequenceFlow>
+    <sequenceFlow id="sid-7317FE95-BFC0-4899-B7E4-77B4DA8B9083" sourceRef="buyNewPart" targetRef="acknowledgement"></sequenceFlow>
+  </process>
+</definitions>

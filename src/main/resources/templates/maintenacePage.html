@@ -1,0 +1,32 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Index Page</title>
+</head>
+<body>
+
+<h1>TaskList</h1>
+
+<table th:each="task: ${taskList}">
+    <tr>
+        <td th:text="${task.getDescription()}"></td>
+        <td><a th:href="@{'/maintenance/completeTask/' + ${task.getId()}}">Complete!</a></td>
+    </tr>
+
+</table>
+
+<h1>Add new part:</h1>
+
+<form th:action="@{/maintenance/addNewPart}" method="post">
+    <table>
+        <tr>
+            <td><label for="partName">Part Name</label></td>
+            <td><input type="text" name="partName"></input></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit"></input></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>  

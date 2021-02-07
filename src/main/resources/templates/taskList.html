@@ -1,0 +1,16 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Index Page</title>
+</head>
+<body>
+
+<h1>TaskList</h1>
+
+<table th:each="task: ${taskList}">
+    <tr>
+        <td th:text = "${task.getDescription()}"></td>
+        <td><a th:href="@{'/buyer/partStore/' + ${task.getId()}}">Go to store</a></td>
+    </tr>
+</table>
+</body>
+</html>  
